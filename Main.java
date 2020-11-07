@@ -1,43 +1,78 @@
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
 
-class Main {
+public class Main {
+	static Scanner scanner = new Scanner(System.in);
 	public static void main(String[] args) {
-		System.out.println("Welcome to Pies, Pies and Pis");
-		while(true) {
-			System.out.println("Is there a customer in line?");
-			System.out.println("1 = yes, 2 = no");
-			Scanner sc=new Scanner(System.in);
-			int cusline =sc.nextInt();
-			switch(cusline) {
-			case 1:
-				System.out.println("Are you a Pie Card member? (1 = yes, 2 = no)");
-				int piemember=sc.nextInt();
-					switch(piemember) {
-					case 1:
-						System.out.println("Please choose an option:");
-						System.out.println("1) Update Pizza Order");
-						System.out.println("3) Update Charm Order");
-						System.out.println("2) Update Cherry Pie Order	");
-						System.out.println("4) Check Out");
 
-					case 2:
-						System.out.println(""
-								+ "Welcome Back, Pie Card holder!\r\n" + 
+		while (true) {
+			System.out.println("Welcome to Pies, Pies and Pis");
+			System.out.println("Is there a customer in line? (1 = yes, 2 = no) > ");
+			int CustomerNoInput = scanner.nextInt();
+			if (CustomerNoInput == 1) {
+				System.out.println("Are you a Pie Card member? (1 = yes, 2 = no) > ");
+				int PieCardmember = scanner.nextInt();
+
+				Map<String, Integer> hm = new 	HashMap<String, Integer>();
+
+				hm.put("plainpizza", 0);
+				hm.put("pepperonipizza", 0);
+				hm.put("CherrypiesFull", 0);
+				hm.put("Cherrypiesslice", 0);
+				hm.put("picharms", 0);
+				
+				switch(PieCardmember) {
+					case 1:
+						System.out.println("Welcome Back, Pie Card holder!\r\n" + 
 								"You will receive: \r\n" + 
 								"	Pepperoni pizza for the price of plain\r\n" + 
 								"	$0.25 off a slice of cherry pie\r\n" + 
 								"	$2.00 off a whole cherry pie\r\n" + 
-								"	$10.00% off each Pi charm \r\n" + 
-								"Please choose an option:\r\n" + 
-								"	1) Update Pizza Order\r\n" + 
-								"	2) Update Cherry Pie Order\r\n" + 
-								"	3) Update Charm Order\r\n" + 
-								"	4) Check Out"
-						);
-					}
-			case 2:
-				return;
+								"	$10.00% off each Pi charm "
+					
+								+ "");
+						Main.optionchoose();
+					case 2:
+						System.out.println("Welcome Back, Pie Card holder!\n" + "You will receive: \n"
+								+ "	Pepperoni pizza for the price of plain\n"
+								+ "	$0.25 off per slice or $2.00 off for a whole pie\n" + "	10% off each Pi charm "
+								+ "10% off over and above any other discounts if the overall order (after other discounts) is $100.00 or more");	
+						
+						optionchoose();
+						break;
+	
+					default:
+						break;
+				}
+
+			} else {
+				System.exit(0);
 			}
+
 		}
+//		scanner.close();
 	}
-}
+
+	private static void optionchoose() {
+		while (true) {
+			System.out.println("Please choose an option:\n" + 
+					"	1) Update Pizza Order\n" + 
+					"	2) Update Cherry Pie Order\n" + 
+					"	3) Update Charm Order\n" + 
+					"	4) Check Out");
+			
+			int option = scanner.nextInt();
+			
+			switch (option) {
+			case 1:
+				System.out.println("Here is your current order:\r\n" + 
+						"	No pizzas ordered\r\n" + 
+						"How many plain pizzas would you like for $10.00 each?"
+						+ "");
+				break;
+
+			default:
+				break;
+			}	
+	}}}
