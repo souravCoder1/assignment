@@ -32,7 +32,8 @@ public class Main {
 								"	$10.00% off each Pi charm "
 					
 								+ "");
-						Main.optionchoose();
+						optionchoose();
+
 					case 2:
 						System.out.println("Welcome Back, Pie Card holder!\n" + "You will receive: \n"
 								+ "	Pepperoni pizza for the price of plain\n"
@@ -70,8 +71,28 @@ public class Main {
 						"	No pizzas ordered\r\n" + 
 						"How many plain pizzas would you like for $10.00 each?"
 						+ "");
+				int plainpizzas=scanner.nextInt();
+				System.out.println("How many pepperoni pizzas would you like for $12.00 each?");
+				int pepperonipizzas=scanner.nextInt();
+				if(pepperonipizzas<0) {
+					System.out.println("Negative number taken as 0");
+					pepperonipizzas=0;
+					
+				}
 				break;
-
+			case 2:
+				System.out.println("How many cherry pie slices would you like for:\r\n" + 
+						"	$1.75 per slice\r\n" + 
+						"	$8.00 per pie (6 slices)"
+						+ "");
+				int cherry_pie_slices= scanner.nextInt();
+				break;
+			case 3:
+				System.out.println("Here is your current order:\r\n" + 
+						"No gold Pi charms ordered\r\n" + 
+						"How many Pi charms would you like for $50.00 each?"
+						+ "");
+				int Pi_charms=scanner.nextInt();
 			default:
 				break;
 			}	
