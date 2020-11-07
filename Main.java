@@ -3,6 +3,13 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class Main {
+	static int PieCardmember=0;
+	static int pepperonipizzas=0;
+	static int plainpizzas=0;
+	static int cherry_pie_slices=0;
+	static int Pi_charms=0;
+	static int whole_cherry_pie_slices=0;
+	static int partial_cherry_pie_slices=0;
 	static Scanner scanner = new Scanner(System.in);
 	public static void main(String[] args) {
 
@@ -11,17 +18,8 @@ public class Main {
 			System.out.println("Is there a customer in line? (1 = yes, 2 = no) > ");
 			int CustomerNoInput = scanner.nextInt();
 			if (CustomerNoInput == 1) {
-				System.out.println("Are you a Pie Card member? (1 = yes, 2 = no) > ");
-				int PieCardmember = scanner.nextInt();
-
-				Map<String, Integer> hm = new 	HashMap<String, Integer>();
-
-				hm.put("plainpizza", 0);
-				hm.put("pepperonipizza", 0);
-				hm.put("CherrypiesFull", 0);
-				hm.put("Cherrypiesslice", 0);
-				hm.put("picharms", 0);
-				
+				System.out.println("Are you a Pie Card member? (1 = yes, 2 = no) > ");	
+				PieCardmember=scanner.nextInt();
 				switch(PieCardmember) {
 					case 1:
 						System.out.println("Welcome Back, Pie Card holder!\r\n" + 
@@ -71,7 +69,7 @@ public class Main {
 						"	No pizzas ordered\r\n" + 
 						"How many plain pizzas would you like for $10.00 each?"
 						+ "");
-				int plainpizzas=scanner.nextInt();
+				plainpizzas=scanner.nextInt();
 				System.out.println("How many pepperoni pizzas would you like for $12.00 each?");
 				int pepperonipizzas=scanner.nextInt();
 				if(pepperonipizzas<0) {
@@ -85,14 +83,37 @@ public class Main {
 						"	$1.75 per slice\r\n" + 
 						"	$8.00 per pie (6 slices)"
 						+ "");
-				int cherry_pie_slices= scanner.nextInt();
+				cherry_pie_slices= scanner.nextInt();
+				if(cherry_pie_slices>6) {
+					whole_cherry_pie_slices=cherry_pie_slices/6;
+					partial_cherry_pie_slices=cherry_pie_slices%6;
+				}
+				
 				break;
 			case 3:
 				System.out.println("Here is your current order:\r\n" + 
 						"No gold Pi charms ordered\r\n" + 
 						"How many Pi charms would you like for $50.00 each?"
 						+ "");
-				int Pi_charms=scanner.nextInt();
+				Pi_charms=scanner.nextInt();
+			case 4:
+				System.out.println("Here is your subtotal:\r\n" + 
+						"\r\n" + 
+						"	"+plainpizzas+" plain pizzas at $10.00ea.:			$"+10.00*plainpizzas+"\r\n" + 
+						"	"+whole_cherry_pie_slices+" whole cherry pies at $10.00ea.:		$"+(10.00*whole_cherry_pie_slices)+"\r\n" + 
+						"	"+partial_cherry_pie_slices+" cherry pie slices at $2.00ea.:		$"+(2.00*partial_cherry_pie_slices)+"\r\n" + 
+						"	"+Pi_charms+" 14K gold Pi charms at $50.00ea.:		$"+(50.00*Pi_charms)+"\r\n" + 
+						"							-------\r\n" + 
+						"	Subtotal:					$"+(10.00*plainpizzas+10.00*whole_cherry_pie_slices+2.00*partial_cherry_pie_slices+50.00*Pi_charms)+"\r\n" + 
+						"	Tax:						$"+(10.00*plainpizzas+10.00*whole_cherry_pie_slices+2.00*partial_cherry_pie_slices+50.00*Pi_charms)*7/100+"\r\n" + 
+						"							-------\r\n" + 
+						"	Total:						$"+(10.00*plainpizzas+10.00*whole_cherry_pie_slices+2.00*partial_cherry_pie_slices+50.00*Pi_charms)*107/100+"\r\n" + 
+						"\r\n" + 
+						"\r\n" + 
+						"	Please enter your payment amount:		$"+Math.ceil((10.00*plainpizzas+10.00*whole_cherry_pie_slices+2.00*partial_cherry_pie_slices+50.00*Pi_charms)*107/100)+"\r\n" + 
+						"	Your change:					$"+(Math.floor((10.00*plainpizzas+10.00*whole_cherry_pie_slices+2.00*partial_cherry_pie_slices+50.00*Pi_charms)*107/100)-(10.00*plainpizzas+10.00*whole_cherry_pie_slices+2.00*partial_cherry_pie_slices+50.00*Pi_charms)*107/100)+"\r\n" + 
+						"	Thank you for shopping at PP&P!"
+						+ "");
 			default:
 				break;
 			}	
