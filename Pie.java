@@ -94,28 +94,30 @@ public class Pie {
 				System.out
 						.println("Here is your subtotal:\r\n" + "\r\n" + "	" + plainpizzas
 								+ " plain pizzas at $10.00ea.:			$" + 10.00 * plainpizzas + "\r\n" + "	"
+								+ pepperonipizzas + " pepperoni pizzas at $12.00ea.:		$"
+								+ (12.00 * pepperonipizzas)+ "\r\n" + "	"
 								+ whole_cherry_pie_slices + " whole cherry pies at $10.00ea.:		$"
 								+ (10.00 * whole_cherry_pie_slices) + "\r\n" + "	" + partial_cherry_pie_slices
 								+ " cherry pie slices at $2.00ea.:		$" + (2.00 * partial_cherry_pie_slices) + "\r\n"
 								+ "	" + Pi_charms + " 14K gold Pi charms at $50.00ea.:		$" + (50.00 * Pi_charms)
 								+ "\r\n" + "							-------\r\n"
 								+ "	Subtotal:					$"
-								+ (10.00 * plainpizzas + 10.00 * whole_cherry_pie_slices
+								+ (10.00 * plainpizzas +12.00 * pepperonipizzas + 10.00 * whole_cherry_pie_slices
 										+ 2.00 * partial_cherry_pie_slices + 50.00 * Pi_charms)
 								+ "\r\n" + "	Tax:						$"
-								+ (10.00 * plainpizzas + 10.00 * whole_cherry_pie_slices
+								+ (10.00 * plainpizzas + 12.00 * pepperonipizzas + 10.00 * whole_cherry_pie_slices
 										+ 2.00 * partial_cherry_pie_slices + 50.00 * Pi_charms) * 7 / 100
 								+ "\r\n" + "							-------\r\n"
 								+ "	Total:						$"
-								+ (10.00 * plainpizzas + 10.00 * whole_cherry_pie_slices
+								+ (10.00 * plainpizzas + 12.00 * pepperonipizzas + 10.00 * whole_cherry_pie_slices
 										+ 2.00 * partial_cherry_pie_slices + 50.00 * Pi_charms) * 107 / 100
 								+ "\r\n" + "\r\n" + "\r\n" + "	Please enter your payment amount:		$"
-								+ Math.ceil((10.00 * plainpizzas + 10.00 * whole_cherry_pie_slices
+								+ Math.ceil((10.00 * plainpizzas + 12.00 * pepperonipizzas +10.00 * whole_cherry_pie_slices
 										+ 2.00 * partial_cherry_pie_slices + 50.00 * Pi_charms) * 107 / 100)
 								+ "\r\n" + "	Your change:					$"
-								+ (Math.floor((10.00 * plainpizzas + 10.00 * whole_cherry_pie_slices
+								+ (Math.floor((10.00 * plainpizzas + 12.00 * pepperonipizzas + 10.00 * whole_cherry_pie_slices
 										+ 2.00 * partial_cherry_pie_slices + 50.00 * Pi_charms) * 107 / 100)
-										- (10.00 * plainpizzas + 10.00 * whole_cherry_pie_slices
+										- (10.00 * plainpizzas + 12.00 * pepperonipizzas +10.00 * whole_cherry_pie_slices
 												+ 2.00 * partial_cherry_pie_slices + 50.00 * Pi_charms) * 107 / 100)
 								+ "\r\n" + "	Thank you for shopping at PP&P!" + "");
 
