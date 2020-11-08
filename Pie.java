@@ -91,6 +91,8 @@ public class Pie {
 						+ "How many Pi charms would you like for $50.00 each?" + "");
 				Pi_charms = scanner.nextInt();
 			case 4:
+				
+				float total_price = (float) (10.00 * plainpizzas + 12.00 * pepperonipizzas + 10.00 * whole_cherry_pie_slices + 2.00 * partial_cherry_pie_slices + 50.00 * Pi_charms);
 				System.out
 						.println("Here is your subtotal:\r\n" + "\r\n" + "	" + plainpizzas
 								+ " plain pizzas at $10.00ea.:			$" + 10.00 * plainpizzas + "\r\n" + "	"
@@ -109,16 +111,12 @@ public class Pie {
 										+ 2.00 * partial_cherry_pie_slices + 50.00 * Pi_charms) * 7 / 100
 								+ "\r\n" + "							-------\r\n"
 								+ "	Total:						$"
-								+ (10.00 * plainpizzas + 12.00 * pepperonipizzas + 10.00 * whole_cherry_pie_slices
-										+ 2.00 * partial_cherry_pie_slices + 50.00 * Pi_charms) * 107 / 100
+								+ total_price * 107 / 100
 								+ "\r\n" + "\r\n" + "\r\n" + "	Please enter your payment amount:		$"
-								+ Math.ceil((10.00 * plainpizzas + 12.00 * pepperonipizzas +10.00 * whole_cherry_pie_slices
-										+ 2.00 * partial_cherry_pie_slices + 50.00 * Pi_charms) * 107 / 100)
+								+ Math.ceil(total_price * 107 / 100)
 								+ "\r\n" + "	Your change:					$"
-								+ (Math.floor((10.00 * plainpizzas + 12.00 * pepperonipizzas + 10.00 * whole_cherry_pie_slices
-										+ 2.00 * partial_cherry_pie_slices + 50.00 * Pi_charms) * 107 / 100)
-										- (10.00 * plainpizzas + 12.00 * pepperonipizzas +10.00 * whole_cherry_pie_slices
-												+ 2.00 * partial_cherry_pie_slices + 50.00 * Pi_charms) * 107 / 100)
+								+ (double)Math.round(Math.abs((Math.floor(total_price * 107 / 100)
+										- total_price * 107 / 100))*100)/100
 								+ "\r\n" + "	Thank you for shopping at PP&P!" + "");
 
 				pepperonipizzas = 0;
