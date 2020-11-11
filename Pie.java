@@ -136,7 +136,7 @@ public class Pie {
 			case 4:
 				float discount=0;
 				float total_price=0;
-				if(pepperonipizzas==0&&whole_cherry_pie_slices==0) {
+				if(pepperonipizzas==0||whole_cherry_pie_slices==0) {
 					total_price = (float) (10.00 * plainpizzas + 12.00 * pepperonipizzas + 8.00 * whole_cherry_pie_slices + 1.75 * partial_cherry_pie_slices + 45.00 * Pi_charms);
 				}
 				else {
@@ -167,6 +167,7 @@ public class Pie {
 									+ partial_cherry_pie_slices +" cherry pie slices at $1.75ea.:		$" + (1.75 * partial_cherry_pie_slices)+"\r\n");
 								}
 								System.out.println(Pi_charms +" 14K gold Pi charms at $45.00ea.:		$"+ (45.00 * Pi_charms)+"\r\n" + 
+								"						-------\r\n" + 
 								"Subtotal:					$"+total_price+"\r\n" + 
 								"Bonus discount of 10%:				($"+String.format("%.2f",discount)+")\r\n" + 
 								"						-------\r\n" + 
@@ -288,16 +289,13 @@ public class Pie {
 
 				break;
 			case 4:
-				float discount=0;
 				float total_price=0;
-				if(pepperonipizzas==0&&whole_cherry_pie_slices==0) {
-					total_price = (float) (10.00 * plainpizzas + 12.00 * pepperonipizzas + 10.00 * whole_cherry_pie_slices + 2.00 * partial_cherry_pie_slices + 45.00 * Pi_charms);
+				if(pepperonipizzas==0||whole_cherry_pie_slices==0) {
+					total_price = (float) (10.00 * plainpizzas + 12.00 * pepperonipizzas + 10.00 * whole_cherry_pie_slices + 2.00 * partial_cherry_pie_slices + 50.00 * Pi_charms);
+
 				}
 				else {
-					total_price = (float) (10.00 * plainpizzas + 12.00 * pepperonipizzas + 2.00 * cherry_pie_slices + 45.00 * Pi_charms);
-				}
-				if(total_price>100) {
-					discount = total_price*10/100;
+					total_price = (float) (10.00 * plainpizzas + 12.00 * pepperonipizzas + 2.00 * cherry_pie_slices + 50.00 * Pi_charms);
 				}
 				if(total_price==0) {
 					System.out.println("Here is your subtotal:\r\n" + 
@@ -306,7 +304,6 @@ public class Pie {
 							"");
 					return;
 				}
-				float New_subtotal=total_price-discount;
 				
 				System.out
 						.println("Here is your subtotal:\r\n" + 
@@ -314,30 +311,30 @@ public class Pie {
 								+ plainpizzas +" plain pizzas at $10.00ea.:			$" + 10.00 * plainpizzas + "\r\n" 
 								+ pepperonipizzas +" pepperoni pizzas at $12.00ea.:		$" + 12.00 * pepperonipizzas);
 								if(whole_cherry_pie_slices==0&&partial_cherry_pie_slices==0) {
-									System.out.println(cherry_pie_slices +" cherry pies at $1.75ea.:			$"+ (1.75 * cherry_pie_slices));
+									System.out.println(cherry_pie_slices +" cherry pies at $2.00ea.:			$"+ (2.00 * cherry_pie_slices));
 								}
 								else {
-									System.out.println(whole_cherry_pie_slices + " whole cherry pies at $8.00ea.:		$"+ (8.00 * whole_cherry_pie_slices)+"\r\n" + 
-									+ partial_cherry_pie_slices +" cherry pie slices at $1.75ea.:		$" + (1.75 * partial_cherry_pie_slices)+"\r\n");
+									System.out.println(whole_cherry_pie_slices + " whole cherry pies at $10.00.00ea.:		$"+ (10.00 * whole_cherry_pie_slices)+"\r\n" + 
+									+ partial_cherry_pie_slices +" cherry pie slices at $2.00ea.:		$" + (2.00 * partial_cherry_pie_slices)+"\r\n");
 								}
-								System.out.println(Pi_charms +" 14K gold Pi charms at $45.00ea.:		$"+ (50.00 * Pi_charms)+"\r\n" + 
+								System.out.println(Pi_charms +" 14K gold Pi charms at $45.00ea.:		$"+ (50.00 * Pi_charms)+"\r\n" +
+								"						-------\r\n" + 
 								"Subtotal:					$"+total_price+"\r\n" + 
 							
 								"						-------\r\n" + 
-								"New subtotal:					$"+New_subtotal+"\r\n" + 
-								"Tax:						$"+String.format("%.2f", New_subtotal*7/100)+"\r\n" + 
+								"Tax:						$"+String.format("%.2f", total_price*7/100)+"\r\n" + 
 								"						-------\r\n" + 
-								"Total:						$"+String.format("%.2f", New_subtotal*107/100)+"\r\n" + 
+								"Total:						$"+String.format("%.2f", total_price*107/100)+"\r\n" + 
 								"\r\n" + 
 								"\r\n" + 
 								"Please enter your payment amount:		");
 								int payment_entered=scanner.nextInt();System.out.println("$"+ payment_entered);
-								while(payment_entered<New_subtotal*107/100) {
+								while(payment_entered<total_price*107/100) {
 									System.out.println("Please enter your payment amount:		");
 									payment_entered=scanner.nextInt();System.out.println("$"+ payment_entered);
 								}
 								
-								System.out.println("Your change:					$"+String.format("%.2f",Math.abs(payment_entered- New_subtotal * 107 / 100))+"\r\n" + 
+								System.out.println("Your change:					$"+String.format("%.2f",Math.abs(payment_entered- total_price * 107 / 100))+"\r\n" + 
 							
 								"Thank you for shopping at PP&P!"
 								+ "");
