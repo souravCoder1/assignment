@@ -67,9 +67,15 @@ public class Pie {
 				}
 				else {
 					
+<<<<<<< HEAD
 					System.out.println("Here is your current order:\r\n" + 
 							plainpizzas+" plain pizzas ordered\r\n\""
 							+pepperonipizzas+" pepperoni pizzas ordered already"
+=======
+					System.out.println("Here is your current order:\r\n"+
+							plainpizzas+" plain pizzas ordered:\r\n"+
+							pepperonipizzas+" pepperoni pizzas ordered already"
+>>>>>>> 20c637d03f9549399c5bc5efa97ea18f8e5defb2
 							+ "\r\nHow many plain pizzas would you like for $10.00 each?" + "");
 					plainpizzas = scanner.nextInt();
 					System.out.println("How many pepperoni pizzas would you like for $12.00 each?");
@@ -135,7 +141,16 @@ public class Pie {
 			case 4:
 				float discount=0;
 				float total_price=0;
+<<<<<<< HEAD
 				total_price = (float) (10.00 * plainpizzas + 12.00 * pepperonipizzas + 8.00 * whole_cherry_pie_slices + 1.75 * partial_cherry_pie_slices + 45.00 * Pi_charms);
+=======
+				if(pepperonipizzas==0||whole_cherry_pie_slices==0) {
+					total_price = (float) (10.00 * plainpizzas + 12.00 * pepperonipizzas + 8.00 * whole_cherry_pie_slices + 1.75 * partial_cherry_pie_slices + 45.00 * Pi_charms);
+				}
+				else {
+					total_price = (float) (10.00 * plainpizzas + 12.00 * pepperonipizzas + 1.75 * cherry_pie_slices + 45.00 * Pi_charms);
+				}
+>>>>>>> 20c637d03f9549399c5bc5efa97ea18f8e5defb2
 				if(total_price>100) {
 					discount = total_price*10/100;
 				}
@@ -152,10 +167,23 @@ public class Pie {
 						.println("Here is your subtotal:\r\n" + 
 								"\r\n" + 
 								+ plainpizzas +" plain pizzas at $10.00ea.:			$" + 10.00 * plainpizzas + "\r\n" 
+<<<<<<< HEAD
 								+ pepperonipizzas +" pepperoni pizzas at $12.00ea.:		$" + 12.00 * pepperonipizzas + "\r\n" 
 								+ whole_cherry_pie_slices + " whole cherry pies at $8.00ea.:		$"+ (8.00 * whole_cherry_pie_slices)+"\r\n" + 
 								+ partial_cherry_pie_slices +" cherry pie slices at $1.75ea.:		$" + (1.75 * partial_cherry_pie_slices)+"\r\n" + 
 								+ Pi_charms +" 14K gold Pi charms at $45.00ea.:		$"+ (45.00 * Pi_charms)+"\r\n" + 
+=======
+								+ pepperonipizzas +" pepperoni pizzas at $12.00ea.:		$" + 12.00 * pepperonipizzas);
+								if(whole_cherry_pie_slices==0&&partial_cherry_pie_slices==0) {
+									System.out.println(cherry_pie_slices +" cherry pies at $1.75ea.:			$"+ (1.75 * cherry_pie_slices));
+								}
+								else {
+									System.out.println(whole_cherry_pie_slices + " whole cherry pies at $8.00ea.:		$"+ (8.00 * whole_cherry_pie_slices)+"\r\n" + 
+									+ partial_cherry_pie_slices +" cherry pie slices at $1.75ea.:		$" + (1.75 * partial_cherry_pie_slices)+"\r\n");
+								}
+								System.out.println(Pi_charms +" 14K gold Pi charms at $45.00ea.:		$"+ (45.00 * Pi_charms)+"\r\n" + 
+								"						-------\r\n" + 
+>>>>>>> 20c637d03f9549399c5bc5efa97ea18f8e5defb2
 								"Subtotal:					$"+total_price+"\r\n" + 
 								"Bonus discount of 10%:				($"+String.format("%.2f",discount)+")\r\n" + 
 								"						-------\r\n" + 
@@ -166,10 +194,17 @@ public class Pie {
 								"\r\n" + 
 								"\r\n" + 
 								"Please enter your payment amount:		");
+<<<<<<< HEAD
 								int payment_entered=scanner.nextInt();System.out.println("$"+ payment_entered);
 								while(payment_entered<New_subtotal) {
 									System.out.println("Please enter your payment amount:		");
 									payment_entered=scanner.nextInt();System.out.println("$"+ payment_entered);
+=======
+								float payment_entered=scanner.nextInt();System.out.println("$"+ payment_entered);
+								while(payment_entered<New_subtotal*107/100) {
+									System.out.println("Please enter your payment amount:		");
+									payment_entered=scanner.nextInt();
+>>>>>>> 20c637d03f9549399c5bc5efa97ea18f8e5defb2
 								}
 								
 								System.out.println("Your change:					$"+String.format("%.2f",Math.abs(payment_entered- New_subtotal * 107 / 100))+"\r\n" + 
@@ -202,7 +237,11 @@ public class Pie {
 					System.out.println("Here is your current order:\r\n" + "	No pizzas ordered\r\n"
 							+ "How many plain pizzas would you like for $10.00 each?" + "");
 					plainpizzas = scanner.nextInt();
+<<<<<<< HEAD
 					System.out.println("How many pepperoni pizzas would you like for $10.00 each?");
+=======
+					System.out.println("How many pepperoni pizzas would you like for $12.00 each?");
+>>>>>>> 20c637d03f9549399c5bc5efa97ea18f8e5defb2
 					pepperonipizzas = scanner.nextInt();
 					if (pepperonipizzas < 0) {
 						System.out.println("Negative number taken as 0");
@@ -212,11 +251,19 @@ public class Pie {
 				else {
 					
 					System.out.println("Here is your current order:\r\n" + 
+<<<<<<< HEAD
 							plainpizzas+" plain pizzas ordered\r\n\""
 							+pepperonipizzas+" pepperoni pizzas ordered already"
 							+ "\r\nHow many plain pizzas would you like for $10.00 each?" + "");
 					plainpizzas = scanner.nextInt();
 					System.out.println("How many pepperoni pizzas would you like for $10.00 each?");
+=======
+							plainpizzas+" plain pizzas ordered\r\n"
+							+pepperonipizzas+" pepperoni pizzas ordered already"
+							+ "\r\nHow many plain pizzas would you like for $10.00 each?" + "");
+					plainpizzas = scanner.nextInt();
+					System.out.println("How many pepperoni pizzas would you like for $12.00 each?");
+>>>>>>> 20c637d03f9549399c5bc5efa97ea18f8e5defb2
 					pepperonipizzas = scanner.nextInt();
 					if (pepperonipizzas < 0) {
 						System.out.println("Negative number taken as 0");
@@ -277,11 +324,21 @@ public class Pie {
 
 				break;
 			case 4:
+<<<<<<< HEAD
 				float discount=0;
 				float total_price=0;
 				total_price = (float) (10.00 * plainpizzas + 10.00 * pepperonipizzas + 10.00 * whole_cherry_pie_slices + 2.00 * partial_cherry_pie_slices + 50.00 * Pi_charms);
 				if(total_price>100) {
 					discount = total_price*10/100;
+=======
+				float total_price=0;
+				if(pepperonipizzas==0||whole_cherry_pie_slices==0) {
+					total_price = (float) (10.00 * plainpizzas + 12.00 * pepperonipizzas + 10.00 * whole_cherry_pie_slices + 2.00 * partial_cherry_pie_slices + 50.00 * Pi_charms);
+
+				}
+				else {
+					total_price = (float) (10.00 * plainpizzas + 12.00 * pepperonipizzas + 2.00 * cherry_pie_slices + 50.00 * Pi_charms);
+>>>>>>> 20c637d03f9549399c5bc5efa97ea18f8e5defb2
 				}
 				if(total_price==0) {
 					System.out.println("Here is your subtotal:\r\n" + 
@@ -290,12 +347,17 @@ public class Pie {
 							"");
 					return;
 				}
+<<<<<<< HEAD
 				float New_subtotal=total_price-discount;
 
+=======
+				
+>>>>>>> 20c637d03f9549399c5bc5efa97ea18f8e5defb2
 				System.out
 						.println("Here is your subtotal:\r\n" + 
 								"\r\n" + 
 								+ plainpizzas +" plain pizzas at $10.00ea.:			$" + 10.00 * plainpizzas + "\r\n" 
+<<<<<<< HEAD
 								+ pepperonipizzas +" pepperoni pizzas at $12.00ea.:		$" + 10.00 * pepperonipizzas + "\r\n" 
 								+ whole_cherry_pie_slices + " whole cherry pies at $8.00ea.:		$"+ (10.00 * whole_cherry_pie_slices)+"\r\n" + 
 								+ partial_cherry_pie_slices +" cherry pie slices at $1.75ea.:		$" + (2.00 * partial_cherry_pie_slices)+"\r\n" + 
@@ -307,16 +369,42 @@ public class Pie {
 								"Tax:						$"+String.format("%.2f", New_subtotal*7/100)+"\r\n" + 
 								"						-------\r\n" + 
 								"Total:						$"+String.format("%.2f", New_subtotal*107/100)+"\r\n" + 
+=======
+								+ pepperonipizzas +" pepperoni pizzas at $12.00ea.:		$" + 12.00 * pepperonipizzas);
+								if(whole_cherry_pie_slices==0&&partial_cherry_pie_slices==0) {
+									System.out.println(cherry_pie_slices +" cherry pies at $2.00ea.:			$"+ (2.00 * cherry_pie_slices));
+								}
+								else {
+									System.out.println(whole_cherry_pie_slices + " whole cherry pies at $10.00.00ea.:		$"+ (10.00 * whole_cherry_pie_slices)+"\r\n" + 
+									+ partial_cherry_pie_slices +" cherry pie slices at $2.00ea.:		$" + (2.00 * partial_cherry_pie_slices)+"\r\n");
+								}
+								System.out.println(Pi_charms +" 14K gold Pi charms at $45.00ea.:		$"+ (50.00 * Pi_charms)+"\r\n" +
+								"						-------\r\n" + 
+								"Subtotal:					$"+total_price+"\r\n" + 
+							
+								"						-------\r\n" + 
+								"Tax:						$"+String.format("%.2f", total_price*7/100)+"\r\n" + 
+								"						-------\r\n" + 
+								"Total:						$"+String.format("%.2f", total_price*107/100)+"\r\n" + 
+>>>>>>> 20c637d03f9549399c5bc5efa97ea18f8e5defb2
 								"\r\n" + 
 								"\r\n" + 
 								"Please enter your payment amount:		");
 								int payment_entered=scanner.nextInt();System.out.println("$"+ payment_entered);
+<<<<<<< HEAD
 								while(payment_entered<New_subtotal) {
+=======
+								while(payment_entered<total_price*107/100) {
+>>>>>>> 20c637d03f9549399c5bc5efa97ea18f8e5defb2
 									System.out.println("Please enter your payment amount:		");
 									payment_entered=scanner.nextInt();System.out.println("$"+ payment_entered);
 								}
 								
+<<<<<<< HEAD
 								System.out.println("Your change:					$"+String.format("%.2f", Math.abs(payment_entered- New_subtotal * 107 / 100))+"\r\n" + 
+=======
+								System.out.println("Your change:					$"+String.format("%.2f",Math.abs(payment_entered- total_price * 107 / 100))+"\r\n" + 
+>>>>>>> 20c637d03f9549399c5bc5efa97ea18f8e5defb2
 							
 								"Thank you for shopping at PP&P!"
 								+ "");
